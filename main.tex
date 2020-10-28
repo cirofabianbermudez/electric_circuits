@@ -1,0 +1,98 @@
+\documentclass[10pt,a4paper]{book}
+\usepackage[utf8]{inputenc}							% Codificación
+\usepackage[spanish,es-tabla]{babel}				% Lenguaje español, Tabla n: 
+\usepackage[T1]{fontenc}							% Agregar fuentes con acentos
+\usepackage{amsmath}								% Paquetes necesarios  para matemáticas
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}								% Paquete para indices
+\usepackage{graphicx}								% Para manejar imagenes
+\graphicspath{{imagenes/}}							% Ruta de las imagenes, solo escribir nombre de la imagen
+\author{Autor}										% Información basica del documento
+\title{Titulo}
+\date{22 de Julio de 2019 a las 01:03 a.m.}
+\addtolength{\marginparsep}{12pt}
+\addtolength{\textwidth}{-5pt}
+
+
+%---------------------------------------------------------------------------------------------------
+%-------------------------------------Paquetes adicionales-----------------------------------------
+\usepackage[hidelinks]{hyperref}					% Añade los bookmarks y le quita la caja roja, \url{}
+\urlstyle{same}
+\usepackage{bookmark}									% \url{} con letra normal
+\usepackage{bm}
+
+\usepackage{lipsum}									% Rellenar con texto prueba \lipsum[1-20]
+\usepackage{calc}									% Hacer calculo numericos
+\usepackage{tcolorbox}								% Cuadro de color para resaltar \begin{tcolorbox}...\end{tcolorbox}
+\usepackage{comment}								% Comentarios largos \begin{commment}..\end{comment}
+
+\usepackage[hypcap=false]{caption}					% Para agregar figuras en las notas de margen
+\captionsetup{										% Configuracion figuras notas de margen
+   justification=raggedright
+  ,labelfont={bf}
+% ,font=footnotesize
+}
+
+%---------------------------------------------------------------------------------------------------
+%-------------------------------------Encabezados del libro-----------------------------------------
+\input{header_config}
+%---------------------------------------------------------------------------------------------------
+%-------------------------Funciones definidas por el usuario y extras-------------------------------
+\decimalpoint										% Punto decimal en lugar de coma
+\spanishsignitems									% Viñetas en lugar de cuadros
+\raggedbottom
+
+%-------------------------------------------------------
+%------Funciones definidas por el usuario y extras------
+\usepackage{amsthm}
+\newtheorem{thm}{Teorema}[chapter]
+\newtheorem{defi}{Definición}[chapter]
+\newtheorem{reg}{Regla}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{examp}{Ejemplo}[chapter]
+										% Arregla algunos warnings
+
+\includeonly{
+%				0-portada,
+%				1-prefacio,
+%				2-notas_al_estudiante,
+%				3-acerca_de_los_autores,
+				ch1_conceptos_basicos
+%				ch2_leyes_basicas,
+%				ch3_metodos_de_analisis,
+%				Ap-A_ecuaciones_simultaneas_e_inversion_de_matrices,
+%				Ap-B_numeros_complejos
+			}
+
+
+\begin{document}
+\frontmatter
+	
+	\include{0-portada}
+
+%
+%\tableofcontents									% Indice
+%\addcontentsline{toc}{chapter}{\contentsname}
+
+\mainmatter
+
+\part{Matemáticas elementales}
+
+	\include{ch1_conceptos_basicos}
+
+
+
+\appendix
+	
+
+
+\backmatter
+
+\begin{thebibliography}{99}
+	\bibitem{haaser} Haaser, N., La Salle, J. y Sullivan, J. Análisis Matemático I. Vol. 1 y 2. Ed. Trillas. 1978.
+	\bibitem{zill} Zill, Dennis G. Matemáticas 1 Cálculo diferencial  4a. ed. McGraw-Hill/Interamericana. México, 2011.
+\end{thebibliography}
+
+\end{document}

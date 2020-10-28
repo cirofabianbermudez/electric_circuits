@@ -1,0 +1,17 @@
+\usepackage{fancyhdr}								% Para cambiar el header y el footer
+\pagestyle{fancy}
+
+\fancypagestyle{plain}{								% Quitar numeracion y estilo inicio de capitulo
+  \fancyhf{}
+}
+
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}			% Capitulos y secciones en minusculas
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyhf{}											% Reinicial estilos de header y footer
+\fancyhead[LE]{\footnotesize\textbf{\thepage}\hspace{\marginparwidth}\hspace{\marginparsep}\textsl{\leftmark}} % Numero de pagina en Izq/par y capitulo
+\fancyhead[RO]{\footnotesize\textsl{\rightmark}\hspace{\marginparwidth}\hspace{\marginparsep}\textbf{\thepage}} % Numero de pagina en Der/impar y seccion
+
+\fancyheadoffset[LE,RO]{\marginparsep+\marginparwidth}	% Desplazar header										
+\renewcommand{\headrulewidth}{0pt}						% Quitar lineas horizontales en header y footer
+\renewcommand{\footrulewidth}{0pt}
